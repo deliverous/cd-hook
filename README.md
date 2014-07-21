@@ -1,11 +1,16 @@
 cd-hook
 =======
 
-Hook change directories commands to execute script on enter and on leave
+cd-hook executes script in directories when you enter and leave them.
 
-source cd-hook.sh in your .bashrc or similar
+source `cd-hook.sh` in your `.bashrc` or similar
 
-when changing directory:
-- .on_leave script will be sourced when leaving a directory
-- .on_enter script will be sourced when entering a directory
+When changing directory:
+- `.on_leave` script will be sourced when leaving a directory
+- `.on_enter` script will be sourced when entering a directory
+
+
+References:
+- [ondir](https://github.com/alecthomas/ondir)
+- [smartcd](https://github.com/cxreg/smartcd)
 
