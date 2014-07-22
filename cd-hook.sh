@@ -11,6 +11,7 @@ function process_cd() {
         src=`dirname "$src"`
     done
     next=${dst#$src}
+    OLD=$IFS
     IFS=/
     for i in $next; do
         if [[ $i != "" ]] 
@@ -24,6 +25,7 @@ function process_cd() {
             [ -x "$src/$ON_ENTER" ] && source "$src/$ON_ENTER" "$src" "$dst"
         fi
     done
+    IFS=$OLD
 }
 
 
