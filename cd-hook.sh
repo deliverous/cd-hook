@@ -40,3 +40,5 @@ pushd() {
 popd() {
     builtin popd "$@" && eval "process_cd \"$OLDPWD\" \"$PWD\""
 }              
+
+process_cd "$HOME" "$PWD" 
