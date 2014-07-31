@@ -7,7 +7,7 @@ function process_cd() {
     src=$1
     dst=$2
     while [[ $dst != $src* ]]; do
-        [ -x "$src/$ON_LEAVE" ] && source "$src/$ON_LEAVE" "$src" "$dst"
+        [ -f "$src/$ON_LEAVE" ] && source "$src/$ON_LEAVE" "$src" "$dst"
         src=`dirname "$src"`
     done
     next=${dst#$src}
@@ -22,7 +22,7 @@ function process_cd() {
             else
                 src="$src/$i"
             fi
-            [ -x "$src/$ON_ENTER" ] && source "$src/$ON_ENTER" "$src" "$dst"
+            [ -f "$src/$ON_ENTER" ] && source "$src/$ON_ENTER" "$src" "$dst"
         fi
     done
     IFS=$OLD
